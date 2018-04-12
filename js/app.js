@@ -166,13 +166,13 @@ function stopTime() {
 }
 
 //module to ask the user if he/she wants to play again or not
-//if not the window closes
+//if not alert opens saying thanks
 function playAgain() {
     const playAgain = confirm(`Nice! You finished the game in ${counter} seconds. Play again?`);
     if(playAgain == true){
         gameReset();
     } else {
-        window.close();
+        alert("Thanks for playing");
     }
 }
 
