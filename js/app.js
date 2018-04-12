@@ -26,6 +26,7 @@ class Enemy {
         this.x = -50;
     } 
     //when player collides with enemy, player's position resets
+    //code from https://github.com/Ul1ra/ClassicArcadeGame
     if(player.x < this.x + 70 &&
      player.x + 50 > this.x &&
      player.y < this.y + 30 &&
@@ -88,6 +89,7 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
     //instructions for moving left/right/up/down
+    //code from https://github.com/Ul1ra/ClassicArcadeGame
     handleInput(key) {
         if(key == 'left' && this.x > 0) {
             this.x -= 102;
@@ -118,6 +120,7 @@ const enemyPosY = [60, 150, 230, 310];
 let enemy;
 
 //loop for placing 4 enemy instances into Y position
+//code from https://github.com/Ul1ra/ClassicArcadeGame
 enemyPosY.forEach(function(posY) {
     enemy = new Enemy(0, posY, 100 + Math.floor(Math.random() * 222));
     allEnemies.push(enemy);
@@ -169,7 +172,6 @@ function playAgain() {
     if(playAgain == true){
         gameReset();
     } else {
-        alert("Thanks for playing!");
         window.close();
     }
 }
